@@ -39,3 +39,13 @@ function percol_select_history() {
 #     zle -N percol_select_history
 #     bindkey '^R' percol_select_history
 # fi
+
+
+# copy a file path under current path
+function pwdf()
+{
+    local current_dir=`pwd`
+    local copied_file=`find $current_dir -type f -print |percol`
+    echo -n $copied_file |pclip;
+}
+
