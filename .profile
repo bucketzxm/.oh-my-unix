@@ -8,7 +8,6 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-
 export HOME_OHMYUNIX=$HOME/.oh-my-unix
 
 if [ -d $HOME_OHMYUNIX ]; then
@@ -17,16 +16,16 @@ fi
 
 # install trach-cli
 if ! [ -x "$(command -v trash-put)" ]; then
-    cd $HOME_OHMYUNIX/trash-cli
-    sudo python $HOME_OHMYUNIX/trash-cli/setup.py install
+    cd $HOME_OHMYUNIX/3rdparty/trash-cli
+    sudo python $HOME_OHMYUNIX/3rdparty/trash-cli/setup.py install
 fi
 
 
 # check rmtrash
 
 if ! [ -x "$(command -v rmtrash)" ]; then
-    sudo cp $HOME_OHMYUNIX/rmtrash/rmdirtrash /usr/local/bin
-    sudo cp $HOME_OHMYUNIX/rmtrash/rmtrash /usr/local/bin
+    sudo cp $HOME_OHMYUNIX/3rdparty/rmtrash/rmdirtrash /usr/local/bin
+    sudo cp $HOME_OHMYUNIX/3rdparty/rmtrash/rmtrash /usr/local/bin
 fi
 
 # if running bash
