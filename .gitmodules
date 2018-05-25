@@ -1,0 +1,6 @@
+[submodule "3rdparty/rmtrash"]
+	path = 3rdparty/rmtrash
+	url = https://github.com/PhrozenByte/rmtrash.git
+[submodule "3rdparty/trash-cli"]
+	path = 3rdparty/trash-cli
+	url = https://github.com/andreafrancia/trash-cli.git
