@@ -4,3 +4,6 @@
 [submodule "3rdparty/trash-cli"]
 	path = 3rdparty/trash-cli
 	url = https://github.com/andreafrancia/trash-cli.git
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git

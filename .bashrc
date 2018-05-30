@@ -16,6 +16,9 @@ HISTCONTROL=ignoreboth
 
 
 if [ -n "$ZSH_VERSION" ]; then
+    if [ -f ~/.zshrc ]; then
+        source ~/.zshrc
+    fi
     # assume Zsh
 elif [ -n "$BASH_VERSION" ]; then
     # assume Bash
@@ -81,21 +84,27 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1) \$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1) \$ '
+if [ -n "$BASH_VERSION" ]; then
+    if [ "$color_prompt" = yes ]; then
+        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1) \$ '
+    else
+        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1) \$ '
+    fi
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+
+if [ -n "$BASH_VERSION" ]; then
+    case "$TERM" in
+    xterm*|rxvt*)
+        PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+        ;;
+    *)
+        ;;
+    esac
+fi
+
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -132,14 +141,16 @@ fi
 HISTSIZE=100000
 HISTFILESIZE=200000
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1) \$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1) \$ '
+if [ -n "$BASH_VERSION" ]; then
+    if [ "$color_prompt" = yes ]; then
+        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1) \$ '
+    else
+        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1) \$ '
+    fi
 fi
 
+
 xset -b # disable beep
-alias grep='grep --color=always '
 export PATH=/usr/lib/ccache:$PATH
 
 
