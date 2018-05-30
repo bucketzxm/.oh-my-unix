@@ -10,6 +10,8 @@
 
 export HOME_OHMYUNIX=$HOME/.oh-my-unix
 
+[[ "$XDG_CURRENT_DESKTOP" == "KDE" ]] || export QT_QPA_PLATFORMTHEME="qt5ct"
+
 if [ -d $HOME_OHMYUNIX ]; then
     source $HOME_OHMYUNIX/tool_functions.sh
 fi
@@ -55,3 +57,8 @@ fi
 
 export GTAGSLABEL=pygments
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.pyenv/shims:$PATH"
+
+
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
