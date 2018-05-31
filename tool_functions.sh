@@ -52,8 +52,13 @@ function pwdf()
 function cquerysetup()
 {
     echo "Start cquery setup . This command support for CMake (compile_commands.json)"
-    mkdir -p build
-    cd build && cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=YES ..
-    cd ..
-    ln -s build/compile_commands.json
+    if [ -f 'Makefile' ];  then
+        mkdir -p build
+        cd build && cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=YES ..
+        cd ..
+        ln -s build/compile_commands.json
+    else
+        echo "Cannot find Makefile`"
+    fi
+    
 }
