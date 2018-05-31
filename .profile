@@ -60,5 +60,12 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.pyenv/shims:$PATH"
 
 
+if [ -d $HOME_OHMYUNIX/3rdparty/cquery/build/release/bin ]; then
+    export PATH=$HOME_OHMYUNIX/3rdparty/cquery/build/release/bin:$PATH
+else
+    echo "cquery not installed"
+fi
+
+
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
