@@ -51,6 +51,7 @@ elif [ -n "$BASH_VERSION" ]; then
 
 else
     # asume something else
+    echo "not bash or shell"
 fi
 
 
@@ -154,6 +155,7 @@ xset -b # disable beep
 export PATH=/usr/lib/ccache:$PATH
 
 
+
 [[ $- != *i* ]] && return
 
 colors() {
@@ -185,6 +187,12 @@ colors() {
 
 [[ -f ~/.extend.bashrc ]] && . ~/.extend.bashrc
 [[ -f ~/.profile ]] && . ~/.profile
+
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
+
+if [[ -f ~/.bashrc.mujin ]]; then
+    source ~/.bashrc.mujin
+fi
+
 
 
