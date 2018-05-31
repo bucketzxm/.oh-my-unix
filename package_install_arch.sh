@@ -1,0 +1,1 @@
+yaourt -Sy ttf-iosevka
