@@ -193,6 +193,3 @@ colors() {
 if [[ -f ~/.bashrc.mujin ]]; then
     source ~/.bashrc.mujin
 fi
-
-
-

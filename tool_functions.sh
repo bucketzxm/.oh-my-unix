@@ -49,3 +49,11 @@ function pwdf()
     echo -n $copied_file |pclip;
 }
 
+function cquerysetup()
+{
+    echo "Start cquery setup . This command support for CMake (compile_commands.json)"
+    mkdir -p build
+    cd build && cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=YES ..
+    cd ..
+    ln -s build/compile_commands.json
+}
