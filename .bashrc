@@ -17,7 +17,7 @@ HISTCONTROL=ignoreboth
 
 if [ -n "$ZSH_VERSION" ]; then
     if [ -f ~/.zshrc ]; then
-        source ~/.zshrc
+        # source ~/.zshrc
     fi
     # assume Zsh
 elif [ -n "$BASH_VERSION" ]; then
@@ -186,7 +186,14 @@ colors() {
 }
 
 [[ -f ~/.extend.bashrc ]] && . ~/.extend.bashrc
-[[ -f ~/.profile ]] && . ~/.profile
+if [[ -f ~/.profile ]]; then
+    if [ -L $HOME/.bash_aliases ]; then
+        source `readlink -f $HOME/.profile`
+    else
+        source $HOME/.profile
+    fi
+fi
+[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 

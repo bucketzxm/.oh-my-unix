@@ -55,6 +55,7 @@ if [ -f $HOME/.bash_aliases ]; then
     fi
 fi
 
+
 export GTAGSLABEL=pygments
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.pyenv/shims:$PATH"
