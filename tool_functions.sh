@@ -58,7 +58,6 @@ function cquerysetup()
         cd ..
         ln -s build/compile_commands.json
     else
-        echo "Cannot find Makefile`"
+        echo "Cannot find Makefile"
     fi
-    
 }
