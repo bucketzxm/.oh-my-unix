@@ -57,6 +57,17 @@ fi
 
 export GTAGSLABEL=pygments
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# check if cargo and rust installed, and install some useful command
+if [ -f $HOME/.cargo/env ]; then
+    source $HOME/.cargo/env
+    if ! [ -x "$(command -v bat)" ]; then
+        cargo install bat
+    fi
+    
+fi
+
+
 export PATH="$HOME/.pyenv/shims:$PATH"
 
 
