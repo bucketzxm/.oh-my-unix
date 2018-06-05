@@ -1,3 +1,4 @@
+# install ttf iosevka
 yaourt -Sy ttf-iosevka
 
 # bat command
