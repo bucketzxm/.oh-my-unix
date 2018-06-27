@@ -28,15 +28,16 @@ function check_link(){
     if [ -L ${my_link} ] ; then
         if [ -e ${my_link} ] ; then
             echo "Good link"
-            return 1
+            return 0
         else
             echo "Broken link"
         fi
     elif [ -e ${my_link} ] ; then
         echo "Not a link"
-        return 0
+        return 1
     else
-        return 0
+        echo "File does not exist"
+        return 1
     fi
 }
 
@@ -47,9 +48,8 @@ if [ -f ~/.bashrc ]; then
 fi
 
 if ! check_link ~/.bashrc ; then
-    ln -s .bashrc ~/.bashrc
+    ln -s .bashrc $OHMYUNIXROOT/.bashrc
 fi
-
 
 
 if [ -f ~/.bash_aliases ]; then
@@ -57,14 +57,14 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 if ! check_link ~/.bash_aliases ; then
-    ln -s .bash_aliases ~/.bash_aliases
+    ln -s .bash_aliases $OHMYUNIXROO/.bash_aliases
 fi
 
 if [ -f ~/.bash_profile ]; then
    mv ~/.bash_profile $CONFIG_BACKUP_PATH/.bash_profile
 fi
 if ! check_link ~/.bash_profile ; then
-    ln -s .bash_profile ~/.bash_aliases
+    ln -s .bash_profile $OHMYUNIXROO/.bash_aliases
 fi
 
 
@@ -73,7 +73,7 @@ if [ -f ~/.zshrc ]; then
 fi
 
 if ! check_link ~/.zshrc ; then
-    ln -s .zshrc ~/.zshrc
+    ln -s .zshrc $OHMYUNIXROO/.zshrc
 fi
 
 
