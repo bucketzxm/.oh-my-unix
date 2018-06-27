@@ -18,7 +18,7 @@ export DATE=`date '+%Y-%m-%d%H%M%S'`
 cd $OHMYUNIXROOT
 export CONFIG_BACKUP_PATH=~/.config_backup
 if [ -d $CONFIG_BACKUP_PATH ]; then
-    tar cvf ~/$CONFIG_BACKUP_PATH$DATE.tar.gz CONFIG_BACKUP_PATH
+    tar cvf ~/config_backup$DATE.tar.gz $CONFIG_BACKUP_PATH
 else
     mkdir $CONFIG_BACKUP_PATH
 fi
