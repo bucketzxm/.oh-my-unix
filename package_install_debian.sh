@@ -46,23 +46,24 @@ if [ -f ~/.bashrc ]; then
     mv ~/.bashrc $CONFIG_BACKUP_PATH/.bashrc
 fi
 
-if [ ! check_link ~/.bashrc ]; then
+if ! check_link ~/.bashrc ; then
     ln -s .bashrc ~/.bashrc
 fi
+
 
 
 if [ -f ~/.bash_aliases ]; then
     mv ~/.bash_aliases $CONFIG_BACKUP_PATH/.bash_aliases
 fi
 
-if [ ! check_link ~/.bash_aliases ]; then
+if ! check_link ~/.bash_aliases ; then
     ln -s .bash_aliases ~/.bash_aliases
 fi
 
 if [ -f ~/.bash_profile ]; then
    mv ~/.bash_profile $CONFIG_BACKUP_PATH/.bash_profile
 fi
-if [ ! check_link ~/.bash_profile ]; then
+if ! check_link ~/.bash_profile ; then
     ln -s .bash_profile ~/.bash_aliases
 fi
 
@@ -71,7 +72,7 @@ if [ -f ~/.zshrc ]; then
     mv ~/.zshrc $CONFIG_BACKUP_PATH/.zshrc
 fi
 
-if [ ! check_link ~/.zshrc ]; then
+if ! check_link ~/.zshrc ; then
     ln -s .zshrc ~/.zshrc
 fi
 
