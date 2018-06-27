@@ -48,7 +48,7 @@ if [ -f ~/.bashrc ]; then
 fi
 
 if ! check_link ~/.bashrc ; then
-    ln -s .bashrc $OHMYUNIXROOT/.bashrc
+    ln -s $OHMYUNIXROOT/.bashrc ~/.bashrc
 fi
 
 
@@ -57,14 +57,14 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 if ! check_link ~/.bash_aliases ; then
-    ln -s .bash_aliases $OHMYUNIXROO/.bash_aliases
+    ln -s $OHMYUNIXROO/.bash_aliases ~/.bash_aliases
 fi
 
 if [ -f ~/.bash_profile ]; then
    mv ~/.bash_profile $CONFIG_BACKUP_PATH/.bash_profile
 fi
 if ! check_link ~/.bash_profile ; then
-    ln -s .bash_profile $OHMYUNIXROO/.bash_aliases
+    ln -s $OHMYUNIXROO/.bash_aliases ~/.bash_profile
 fi
 
 
@@ -73,7 +73,7 @@ if [ -f ~/.zshrc ]; then
 fi
 
 if ! check_link ~/.zshrc ; then
-    ln -s .zshrc $OHMYUNIXROO/.zshrc
+    ln -s  $OHMYUNIXROO/.zshrc ~/.zshrc
 fi
 
 
