@@ -28,7 +28,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 ln -s .bash_aliases ~/.bash_aliases
 
-if [ -f ~/.bash_profile]; then
+if [ -f ~/.bash_profile ]; then
    mv ~/.bash_profile ~/$CONFIG_BACKUP_PATH/.bash_profile
 fi
 ln -s .bash_profile ~/.bash_aliases
