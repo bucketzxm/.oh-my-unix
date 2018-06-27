@@ -14,7 +14,7 @@ export PATH=$PATH:`pwd`/build/release/bin/
 # install ccache to speed up compiling same c++ files
 sudo apt-get install ccache
 
-export DATE=`date '+%Y-%m-%d%H:%M:%S'`
+export DATE=`date '+%Y-%m-%d%H%M%S'`
 cd $OHMYUNIXROOT
 export CONFIG_BACKUP_PATH=~/.config_backup
 if [ -d $CONFIG_BACKUP_PATH ]; then
