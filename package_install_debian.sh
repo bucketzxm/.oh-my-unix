@@ -25,22 +25,22 @@ fi
 
 
 if [ -f ~/.bashrc ]; then
-    mv ~/.bashrc ~/$CONFIG_BACKUP_PATH/.bashrc
+    mv ~/.bashrc $CONFIG_BACKUP_PATH/.bashrc
 fi
 ln -s .bashrc ~/.bashrc
 
 if [ -f ~/.bash_aliases ]; then
-    mv ~/.bash_aliases ~/$CONFIG_BACKUP_PATH/.bash_aliases
+    mv ~/.bash_aliases $CONFIG_BACKUP_PATH/.bash_aliases
 fi
 ln -s .bash_aliases ~/.bash_aliases
 
 if [ -f ~/.bash_profile ]; then
-   mv ~/.bash_profile ~/$CONFIG_BACKUP_PATH/.bash_profile
+   mv ~/.bash_profile $CONFIG_BACKUP_PATH/.bash_profile
 fi
 ln -s .bash_profile ~/.bash_aliases
 
 if [ -f ~/.zshrc ]; then
-    mv ~/.zshrc ~/$CONFIG_BACKUP_PATH/.zshrc
+    mv ~/.zshrc $CONFIG_BACKUP_PATH/.zshrc
 fi
 ln -s .zshrc ~/.zshrc
 
