@@ -1,3 +1,4 @@
+set -e
 export OHMYUNIXROOT=`pwd`
 sudo apt-get update && apt-get upgrade
 git submodule update --init
@@ -14,14 +15,13 @@ export PATH=$PATH:`pwd`/build/release/bin/
 sudo apt-get install ccache
 
 cd $OHMYUNIXROOT
-mkdir ~/.config_backup
 export CONFIG_BACKUP_PATH=~/.config_backup
+mkdir $CONFIG_BACKUP_PATH
+
 if [ -f ~/.bashrc ]; then
     mv ~/.bashrc ~/$CONFIG_BACKUP_PATH/.bashrc
 fi
-
 ln -s .bashrc ~/.bashrc
-
 
 if [ -f ~/.bash_aliases ]; then
     mv ~/.bash_aliases ~/$CONFIG_BACKUP_PATH/.bash_aliases
