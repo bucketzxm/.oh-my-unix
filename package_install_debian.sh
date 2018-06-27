@@ -11,5 +11,5 @@ export PATH=$PATH:`pwd`/build/release/bin/
 # curl https://sh.rustup.rs -sSf | sh
 
 
-
-
+# install ccache to speed up compiling same c++ files
+apt-get install ccache
