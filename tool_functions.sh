@@ -61,3 +61,10 @@ function cquerysetup()
         echo "Cannot find Makefile"
     fi
 }
+
+
+function sshbind()
+{
+    echo "bind remote machine by using ssh -L, remote $1"
+    ssh -L8080:localhost:80 $1
+}
