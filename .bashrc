@@ -16,11 +16,12 @@ HISTCONTROL=ignoreboth
 
 
 if [ -n "$ZSH_VERSION" ]; then
+if [ $0 == "zsh" ]; then
     if [ -f ~/.zshrc ]; then
-        # source ~/.zshrc
+       source ~/.zshrc
     fi
     # assume Zsh
-elif [ -n "$BASH_VERSION" ]; then
+elif [ $0 == "bash" ]; then
     # assume Bash
     shopt -s histappend
 
