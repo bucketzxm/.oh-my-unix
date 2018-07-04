@@ -15,7 +15,6 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 
 
-if [ -n "$ZSH_VERSION" ]; then
 if [ $0 == "zsh" ]; then
     if [ -f ~/.zshrc ]; then
        source ~/.zshrc
