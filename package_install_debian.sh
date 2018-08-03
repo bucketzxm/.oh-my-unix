@@ -12,3 +12,6 @@ sudo apt-get install ccache
 
 
 source ./package_install_compile.sh
+
+
+sudo apt-get install colordiff

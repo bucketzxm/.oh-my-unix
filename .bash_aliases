@@ -7,6 +7,7 @@ alias rm='rmtrash'
 alias rmdir='rmdirtrash'
 alias sudo='sudo'
 alias grep='grep --color=always'
+alias diff='colordiff'
 
 if [ -x "$(command -v bat)" ]; then
     alias cat="bat"
