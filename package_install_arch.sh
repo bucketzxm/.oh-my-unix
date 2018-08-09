@@ -9,6 +9,7 @@ yaourt -Sy bat
 
 yaourt -Sy ccache clang
 
+yaourt -Sy colordiff the_silver_searcher
 
 
 source ./package_install_compile.sh
