@@ -10,3 +10,6 @@
 [submodule "3rdparty/cquery"]
 	path = 3rdparty/cquery
 	url = https://github.com/jacobdufault/cquery
+[submodule "3rdparty/fzf"]
+	path = 3rdparty/fzf
+	url = https://github.com/junegunn/fzf.git

@@ -1,13 +1,15 @@
 set -e
 export OHMYUNIXROOT=`pwd`
 # compile cquery
-cd 3rdparty/cquery
+cd 3rdparty
+
 
 # may need to specify clang path, see ./waf configure --help
 # git submodule update --init && ./waf configure build # --variant=debug if you want to report issure
 # export PATH=$PATH:`pwd`/build/release/bin/
 
-
+# install or update fzf
+sh fzf/install.sh
 
 export DATE=`date '+%Y-%m-%d%H%M%S'`
 cd $OHMYUNIXROOT
@@ -17,6 +19,7 @@ if [ -d $CONFIG_BACKUP_PATH ]; then
 else
     mkdir $CONFIG_BACKUP_PATH
 fi
+
 
 function check_link(){
     my_link=$1
@@ -70,6 +73,12 @@ fi
 if ! check_link ~/.zshrc ; then
     ln -s  $OHMYUNIXROOT/.zshrc ~/.zshrc
 fi
+
+
+if ! check_link ~/.fzf.bash ; then
+	ln -s $OHMYUNIXROOT/.fzf.bash ~/.fzf.bash
+fi
+
 
 # rm backup path
 rm -rf $CONFIG_BACKUP_PATH

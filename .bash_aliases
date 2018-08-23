@@ -14,3 +14,5 @@ if [ -x "$(command -v bat)" ]; then
 fi
 
 
+
+export PATH="$HOME/.cargo/bin:$PATH"

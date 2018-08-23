@@ -200,3 +200,5 @@ fi
 if [[ -f ~/.bashrc.mujin ]]; then
     source ~/.bashrc.mujin
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
