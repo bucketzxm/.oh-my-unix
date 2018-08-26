@@ -20,6 +20,9 @@ else
     mkdir $CONFIG_BACKUP_PATH
 fi
 
+# install pyenv
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
 
 function check_link(){
     my_link=$1
@@ -62,7 +65,7 @@ if [ -f ~/.bash_profile ]; then
    mv ~/.bash_profile $CONFIG_BACKUP_PATH/.bash_profile
 fi
 if ! check_link ~/.bash_profile ; then
-    ln -s $OHMYUNIXROOT/.bash_aliases ~/.bash_profile
+    ln -s $OHMYUNIXROOT/.bash_profile ~/.bash_profile
 fi
 
 
