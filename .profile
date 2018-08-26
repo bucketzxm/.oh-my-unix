@@ -24,7 +24,6 @@ fi
 
 
 # check rmtrash
-
 if ! [ -x "$(command -v rmtrash)" ]; then
     sudo cp $HOME_OHMYUNIX/3rdparty/rmtrash/rmdirtrash /usr/local/bin
     sudo cp $HOME_OHMYUNIX/3rdparty/rmtrash/rmtrash /usr/local/bin
@@ -67,9 +66,6 @@ if [ -f $HOME/.cargo/env ]; then
     fi
     
 fi
-
-
-export PATH="$HOME/.pyenv/shims:$PATH"
 
 
 if [ -d $HOME_OHMYUNIX/3rdparty/cquery/build/release/bin ]; then
