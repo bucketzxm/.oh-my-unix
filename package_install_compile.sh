@@ -3,7 +3,6 @@ export OHMYUNIXROOT=`pwd`
 # compile cquery
 cd 3rdparty
 
-
 # may need to specify clang path, see ./waf configure --help
 # git submodule update --init && ./waf configure build # --variant=debug if you want to report issure
 # export PATH=$PATH:`pwd`/build/release/bin/
@@ -61,6 +60,14 @@ if ! check_link ~/.bash_aliases ; then
     ln -s $OHMYUNIXROOT/.bash_aliases ~/.bash_aliases
 fi
 
+if [ -f ~/.profile ]; then
+    mv ~/.profile $CONFIG_BACKUP_PATH/.profile
+fi
+
+if ! check_link ~/.profile ; then
+    ln -s $OHMYUNIXROOT/.profile ~/.profile
+fi
+
 if [ -f ~/.bash_profile ]; then
    mv ~/.bash_profile $CONFIG_BACKUP_PATH/.bash_profile
 fi
@@ -77,11 +84,9 @@ if ! check_link ~/.zshrc ; then
     ln -s  $OHMYUNIXROOT/.zshrc ~/.zshrc
 fi
 
-
 if ! check_link ~/.fzf.bash ; then
 	ln -s $OHMYUNIXROOT/.fzf.bash ~/.fzf.bash
 fi
-
 
 # rm backup path
 rm -rf $CONFIG_BACKUP_PATH
