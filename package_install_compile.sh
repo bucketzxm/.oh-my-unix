@@ -90,6 +90,13 @@ fi
 
 # rm backup path
 rm -rf $CONFIG_BACKUP_PATH
+
+curl -L https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh > ~/.bash_git
+
+
+
 echo "end of package_install_compile.sh"
+
+
 
 
