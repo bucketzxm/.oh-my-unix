@@ -193,6 +193,18 @@ if [[ -f ~/.profile ]]; then
         source $HOME/.profile
     fi
 fi
+
+
+if [[ -f ~/.bash_profile ]]; then
+    if [ -L $HOME/.bash_profile ]; then
+        source `readlink -f $HOME/.bash_profile`
+    else
+        source $HOME/.bash_profile
+    fi
+fi
+
+
+
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
