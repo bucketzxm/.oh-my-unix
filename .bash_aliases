@@ -12,7 +12,3 @@ alias diff='colordiff'
 if [ -x "$(command -v bat)" ]; then
     alias cat="bat"
 fi
-
-
-
-export PATH="$HOME/.cargo/bin:$PATH"
