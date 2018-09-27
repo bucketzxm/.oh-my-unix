@@ -15,4 +15,4 @@ sudo apt-get install colordiff
 
 sudo apt-get install silversearcher-ag
 
-sudo apt-get install netcat-openbsd
+sudo apt-get install netcat-openbsd smartmontools
