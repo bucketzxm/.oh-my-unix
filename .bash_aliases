@@ -1,5 +1,5 @@
 alias aa='apt-get install '
-alias co='git checkout '
+alias gco='git checkout '
 alias ec='emacsclient -c'
 alias grep='grep --color=always '
 alias ls='ls --color=auto '
