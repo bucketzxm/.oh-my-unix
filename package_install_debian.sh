@@ -8,11 +8,9 @@ git submodule update --init
 
 # install ccache to speed up compiling same c++ files
 sudo apt-get install ccache
-
 source ./package_install_compile.sh
 
 sudo apt-get install colordiff
-
 sudo apt-get install silversearcher-ag
-
 sudo apt-get install netcat-openbsd smartmontools
+sudo apt-get install emacs-goodies-el
