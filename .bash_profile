@@ -33,7 +33,7 @@ function pclip() {
 # fi
 
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PATH:$PYENV_ROOT/bin"
+export PATH="$PATH:$PYENV_ROOT/bin:$HOME/.oh-my-unix/3rd/cquery/build"
 
 
 if command -v pyenv 1>/dev/null 2>&1; then

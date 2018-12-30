@@ -13,3 +13,6 @@
 [submodule "3rdparty/fzf"]
 	path = 3rdparty/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "3rdparty/reproc"]
+	path = 3rdparty/reproc
+	url = git@github.com:DaanDeMeyer/reproc.git

@@ -78,3 +78,4 @@ fi
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export GTAGSLABEL=pygments
+export GTAGSLABEL=pygments

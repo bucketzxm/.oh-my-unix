@@ -8,7 +8,7 @@ cd 3rdparty
 # export PATH=$PATH:`pwd`/build/release/bin/
 
 # install or update fzf
-sh fzf/install.sh
+#sh 3rdparty/fzf/install
 
 export DATE=`date '+%Y-%m-%d%H%M%S'`
 cd $OHMYUNIXROOT
