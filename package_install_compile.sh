@@ -69,8 +69,13 @@ if ! check_link ~/.profile ; then
 fi
 
 if [ -f ~/.bash_profile ]; then
-   mv ~/.bash_profile $CONFIG_BACKUP_PATH/.bash_profile
+    mv ~/.bash_profile $CONFIG_BACKUP_PATH/.bash_profile
 fi
+
+if [ -f ~/.gdbinit ]; then
+    mv ~/.gdbinit $CONFIG_BACKUP_PATH/.gdbinit
+fi
+
 if ! check_link ~/.bash_profile ; then
     ln -s $OHMYUNIXROOT/.bash_profile ~/.bash_profile
 fi
@@ -85,14 +90,22 @@ if ! check_link ~/.zshrc ; then
 fi
 
 if ! check_link ~/.fzf.bash ; then
-	ln -s $OHMYUNIXROOT/.fzf.bash ~/.fzf.bash
+	  ln -s $OHMYUNIXROOT/.fzf.bash ~/.fzf.bash
+fi
+
+
+if ! check_link ~/.gdbinit ; then
+    ln -s $OHMYUNIXROOT/.gdbinit ~/.gdbinit
 fi
 
 # rm backup path
-rm -rf $CONFIG_BACKUP_PATH
+# rm -rf $CONFIG_BACKUP_PATH
 
 curl -L https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh > ~/.bash_git
 
+# install or update fzf
+cd $OHMYUNIXHOME/3rdpart
+sh fzf/install.sh
 
 
 echo "end of package_install_compile.sh"
