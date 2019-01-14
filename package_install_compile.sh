@@ -7,9 +7,6 @@ cd 3rdparty
 # git submodule update --init && ./waf configure build # --variant=debug if you want to report issure
 # export PATH=$PATH:`pwd`/build/release/bin/
 
-# install or update fzf
-#sh 3rdparty/fzf/install
-
 export DATE=`date '+%Y-%m-%d%H%M%S'`
 cd $OHMYUNIXROOT
 export CONFIG_BACKUP_PATH=~/.config_backup
@@ -42,61 +39,13 @@ function check_link(){
 }
 
 
-CONFIG_FILES=""
-if [ -f ~/.bashrc ]; then
-    mv ~/.bashrc $CONFIG_BACKUP_PATH/.bashrc
-fi
+CONFIG_FILES=".bashrc .bash_aliases .profile .bash_profile .gdbinit .fzf.bash"
 
-if ! check_link ~/.bashrc ; then
-    ln -s $OHMYUNIXROOT/.bashrc ~/.bashrc
-fi
-
-
-if [ -f ~/.bash_aliases ]; then
-    mv ~/.bash_aliases $CONFIG_BACKUP_PATH/.bash_aliases
-fi
-
-if ! check_link ~/.bash_aliases ; then
-    ln -s $OHMYUNIXROOT/.bash_aliases ~/.bash_aliases
-fi
-
-if [ -f ~/.profile ]; then
-    mv ~/.profile $CONFIG_BACKUP_PATH/.profile
-fi
-
-if ! check_link ~/.profile ; then
-    ln -s $OHMYUNIXROOT/.profile ~/.profile
-fi
-
-if [ -f ~/.bash_profile ]; then
-    mv ~/.bash_profile $CONFIG_BACKUP_PATH/.bash_profile
-fi
-
-if [ -f ~/.gdbinit ]; then
-    mv ~/.gdbinit $CONFIG_BACKUP_PATH/.gdbinit
-fi
-
-if ! check_link ~/.bash_profile ; then
-    ln -s $OHMYUNIXROOT/.bash_profile ~/.bash_profile
-fi
-
-
-if [ -f ~/.zshrc ]; then
-    mv ~/.zshrc $CONFIG_BACKUP_PATH/.zshrc
-fi
-
-if ! check_link ~/.zshrc ; then
-    ln -s  $OHMYUNIXROOT/.zshrc ~/.zshrc
-fi
-
-if ! check_link ~/.fzf.bash ; then
-	  ln -s $OHMYUNIXROOT/.fzf.bash ~/.fzf.bash
-fi
-
-
-if ! check_link ~/.gdbinit ; then
-    ln -s $OHMYUNIXROOT/.gdbinit ~/.gdbinit
-fi
+for FILE in $CONFIG_FILES:
+do
+	mv ~/${FILE} $CONFIG_BACKUP_PATH/${FILE}
+	ln -s $OHMYUNIXROOT/${FILE} ~/${FILE}
+done
 
 # rm backup path
 # rm -rf $CONFIG_BACKUP_PATH
