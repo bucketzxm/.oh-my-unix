@@ -13,7 +13,7 @@ source ./package_install_compile.sh
 sudo apt-get install colordiff
 sudo apt-get install silversearcher-ag
 sudo apt-get install netcat-openbsd smartmontools
-sudo apt-get install emacs-goodies-el curl git okular
+sudo apt-get install emacs-goodies-el curl git okular needrestart
 
 #For correctly reformatting and reindenting c++ code (mandatory for C++ dev):
 sudo apt-get install uncrustify
