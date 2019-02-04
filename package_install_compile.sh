@@ -1,10 +1,16 @@
 set -e
 export OHMYUNIXROOT=`pwd`
 # compile cquery
-cd 3rdparty
-
-# may need to specify clang path, see ./waf configure --help
-# git submodule update --init && ./waf configure build # --variant=debug if you want to report issure
+cd $OHMYUNIXROOT/3rdparty/cquery
+git pull origin master
+git submodule update --init
+rm -rf build/
+# setup new cmake build directory
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=release -DCMAKE_INSTALL_PREFIX=release -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
+make install -j8
+# compile cquery end
 # export PATH=$PATH:`pwd`/build/release/bin/
 
 export DATE=`date '+%Y-%m-%d%H%M%S'`
@@ -17,7 +23,7 @@ else
 fi
 
 # install pyenv
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+#git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
 
 function check_link(){
@@ -39,12 +45,13 @@ function check_link(){
 }
 
 
-CONFIG_FILES=".bashrc .bash_aliases .profile .bash_profile .gdbinit .fzf.bash"
-
-for FILE in $CONFIG_FILES:
+CONFIG_FILES=".bashrc .bash_aliases .profile .bash_profile .gdbinit"
+for FILE in $CONFIG_FILES
 do
-	mv ~/${FILE} $CONFIG_BACKUP_PATH/${FILE}
-	ln -s $OHMYUNIXROOT/${FILE} ~/${FILE}
+    if [ -f ~/${FILE} ]; then
+        mv ~/${FILE} $CONFIG_BACKUP_PATH/${FILE}
+    fi
+    ln -s $OHMYUNIXROOT/${FILE} ~/${FILE}
 done
 
 # rm backup path
@@ -53,8 +60,9 @@ done
 curl -L https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh > ~/.bash_git
 
 # install or update fzf
-cd $OHMYUNIXHOME/3rdpart
-sh fzf/install.sh
+cd $OHMYUNIXROOT/3rdparty
+git clone origin master
+fzf/install
 
 
 echo "end of package_install_compile.sh"
