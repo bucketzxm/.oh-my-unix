@@ -1,4 +1,3 @@
-alias aa='apt-get install '
 alias gco='git checkout '
 alias ec='emacsclient -c'
 alias ls='ls --color=auto '
