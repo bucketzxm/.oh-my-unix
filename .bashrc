@@ -153,24 +153,6 @@ if [[ -f ~/.profile ]]; then
 fi
 
 
-if [[ -f ~/.bash_aliases ]]; then
-    if [ -L $HOME/.bash_aliases ]; then
-        source `readlink -f $HOME/.bash_aliases`
-    else
-        source $HOME/.bash_aliases
-    fi
-fi
-
-
-if [[ -f ~/.bash_profile ]]; then
-    if [ -L $HOME/.bash_profile ]; then
-        source `readlink -f $HOME/.bash_profile`
-    else
-        source $HOME/.bash_profile
-    fi
-fi
-
-
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
