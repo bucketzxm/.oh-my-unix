@@ -15,6 +15,8 @@ sudo apt-get install silversearcher-ag
 sudo apt-get install netcat-openbsd smartmontools
 sudo apt-get install emacs-goodies-el curl git okular needrestart
 
+sudo apt-get install terminator
+
 #For correctly reformatting and reindenting c++ code (mandatory for C++ dev):
 sudo apt-get install uncrustify
 cd $HOME; wget https://redmine.mujin.co.jp/attachments/download/128/.uncrustify.cfg
