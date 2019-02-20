@@ -45,7 +45,7 @@ function check_link(){
 }
 
 
-CONFIG_FILES=".bashrc .bash_aliases .profile .bash_profile .gdbinit"
+CONFIG_FILES=".bashrc .bash_aliases .profile .gdbinit"
 for FILE in $CONFIG_FILES
 do
     if [ -f ~/${FILE} ]; then
@@ -61,7 +61,7 @@ curl -L https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh >
 
 # install or update fzf
 cd $OHMYUNIXROOT/3rdparty
-git clone origin master
+git pull origin master
 fzf/install
 
 
