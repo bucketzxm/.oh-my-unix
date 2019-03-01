@@ -64,6 +64,8 @@ cd $OHMYUNIXROOT/3rdparty
 git pull origin master
 fzf/install
 
+# config for git alias
+git config --global alias.co checkout
 
 echo "end of package_install_compile.sh"
 
