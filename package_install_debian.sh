@@ -15,7 +15,9 @@ sudo apt-get install silversearcher-ag
 sudo apt-get install netcat-openbsd smartmontools
 sudo apt-get install emacs-goodies-el curl git okular needrestart
 
-sudo apt-get install terminator pv
+sudo apt-get install terminator pv meld
+
+>>>>>>> 1f3d448632aaddfbe7345d8047d3a92051a3488d
 
 #For correctly reformatting and reindenting c++ code (mandatory for C++ dev):
 sudo apt-get install uncrustify
