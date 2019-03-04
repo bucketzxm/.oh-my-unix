@@ -23,8 +23,9 @@ else
 fi
 
 # install pyenv
-#git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-
+if [ ! -d ~/.pyenv ]; then
+    git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+fi
 
 function check_link(){
     my_link=$1
@@ -56,7 +57,6 @@ done
 
 # rm backup path
 # rm -rf $CONFIG_BACKUP_PATH
-
 curl -L https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh > ~/.bash_git
 
 # install or update fzf
@@ -69,7 +69,3 @@ git config --global alias.co checkout
 git config --global diff.tool meld
 
 echo "end of package_install_compile.sh"
-
-
-
-
