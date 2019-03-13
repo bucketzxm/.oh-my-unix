@@ -1,9 +1,11 @@
 set -e
-export OHMYUNIXROOT=`pwd`
+export OHMYUNIXROOT="$(dirname $0)"
 # compile cquery
+echo $OHMYUNIXROOT
 cd $OHMYUNIXROOT/3rdparty/cquery
 git pull origin master
 git submodule update --init
+git submodule update --remote
 rm -rf build/
 # setup new cmake build directory
 mkdir build
@@ -60,12 +62,12 @@ done
 curl -L https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh > ~/.bash_git
 
 # install or update fzf
-cd $OHMYUNIXROOT/3rdparty
+cd $OHMYUNIXROOT/3rdparty/fzf
 git pull origin master
-fzf/install
+./install
 
 # config for git alias
 git config --global alias.co checkout
 git config --global diff.tool meld
 
-echo "end of package_install_compile.sh"
+echo "package_install_compile.sh finished."

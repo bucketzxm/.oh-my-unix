@@ -8,7 +8,6 @@ git submodule update --init
 
 # install ccache to speed up compiling same c++ files
 sudo apt-get install ccache cmake build-essential
-source ./package_install_compile.sh
 
 sudo apt-get install colordiff
 sudo apt-get install silversearcher-ag
@@ -30,3 +29,6 @@ gsettings set org.gnome.metacity.theme name Clearlooks-Phenix
 
 # choose terminal
 sudo update-alternatives --config x-terminal-emulator
+
+# install 3rdparty packages
+source ./package_install_compile.sh
