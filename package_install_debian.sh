@@ -8,7 +8,6 @@ git submodule update --init
 
 # install ccache to speed up compiling same c++ files
 sudo apt-get install ccache cmake build-essential
-source ./package_install_compile.sh
 
 sudo apt-get install colordiff
 sudo apt-get install silversearcher-ag
@@ -19,7 +18,6 @@ sudo apt-get install terminator pv meld autoconf
 
 # pyenv recommanded
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-
 
 
 #For correctly reformatting and reindenting c++ code (mandatory for C++ dev):
@@ -35,3 +33,6 @@ gsettings set org.gnome.metacity.theme name Clearlooks-Phenix
 
 # choose terminal
 sudo update-alternatives --config x-terminal-emulator
+
+# install 3rdparty packages
+source ./package_install_compile.sh
