@@ -15,9 +15,12 @@ sudo apt-get install silversearcher-ag
 sudo apt-get install netcat-openbsd smartmontools
 sudo apt-get install emacs-goodies-el curl git okular needrestart
 
-sudo apt-get install terminator pv meld
+sudo apt-get install terminator pv meld autoconf
 
->>>>>>> 1f3d448632aaddfbe7345d8047d3a92051a3488d
+# pyenv recommanded
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+
 
 #For correctly reformatting and reindenting c++ code (mandatory for C++ dev):
 sudo apt-get install uncrustify
