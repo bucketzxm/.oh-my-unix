@@ -1,5 +1,8 @@
 set -e
 
+
+SERVER_MODE=$2
+
 sudo apt-get update && sudo apt-get upgrade
 git submodule update --init
 
@@ -16,19 +19,36 @@ sudo apt-get install emacs-goodies-el curl git okular needrestart
 
 sudo apt-get install terminator pv meld
 
+# install gnutls for emacs
+sudo apt-get install libgnutls28-dev
+
+# fix makeinfo
+# In (at least) Ubuntu when using bash, it tells you what package you need to install if you type in a command and its not found in your path. My terminal says you need to install 'texinfo' package. from stackoverflow(https://stackoverflow.com/questions/338317/what-is-makeinfo-and-how-do-i-get-it)
+sudo apt-get install texinfo
+
 #For correctly reformatting and reindenting c++ code (mandatory for C++ dev):
 sudo apt-get install uncrustify
 cd $HOME; wget https://redmine.mujin.co.jp/attachments/download/128/.uncrustify.cfg
-# gnome flash back
-sudo apt-get install gnome-session-flashback gnome-panel gnome-panel-control xfce4-terminal
-sudo update-alternatives --install /etc/alternatives/x-session-manager gnome-flashback-metacity /usr/lib/gnome-flashback/gnome-flashback-metacity 99
 
-sudo apt-get install clearlooks-phenix-theme
-gsettings set org.gnome.metacity.theme type metacity
-gsettings set org.gnome.metacity.theme name Clearlooks-Phenix
+if [ -z ${SERVER_MODE} ]; then
+    # gnome flash back
+    sudo apt-get install gnome-session-flashback gnome-panel gnome-panel-control xfce4-terminal
+    sudo update-alternatives --install /etc/alternatives/x-session-manager gnome-flashback-metacity /usr/lib/gnome-flashback/gnome-flashback-metacity 99
+
+    sudo apt-get install clearlooks-phenix-theme
+    gsettings set org.gnome.metacity.theme type metacity
+    gsettings set org.gnome.metacity.theme name Clearlooks-Phenix
+fi
 
 # choose terminal
 sudo update-alternatives --config x-terminal-emulator
 
+
+# emacs elpy 
+# https://github.com/jorgenschaefer/elpy
+sudo apt-get install elpa-elpy
+
+
 # install 3rdparty packages
 source ./package_install_compile.sh
+
