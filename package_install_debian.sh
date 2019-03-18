@@ -1,7 +1,7 @@
 set -e
 
 
-SERVER_MODE=$2
+SERVER_MODE=$1
 
 sudo apt-get update && sudo apt-get upgrade
 git submodule update --init
@@ -32,7 +32,8 @@ sudo apt-get install texinfo
 
 #For correctly reformatting and reindenting c++ code (mandatory for C++ dev):
 sudo apt-get install uncrustify
-cd $HOME; wget https://redmine.mujin.co.jp/attachments/download/128/.uncrustify.cfg
+# add () to make `cd` temporatily
+(cd $HOME; wget https://redmine.mujin.co.jp/attachments/download/128/.uncrustify.cfg)
 
 if [ -z ${SERVER_MODE} ]; then
     # gnome flash back
@@ -50,8 +51,12 @@ sudo update-alternatives --config x-terminal-emulator
 
 # emacs elpy 
 # https://github.com/jorgenschaefer/elpy
-sudo apt-get install elpa-elpy
 
+# ubuntu limited
+release_distribution=`lsb_release -d | awk '{ print $2 }'`
+if [ release_distribution = 'Ubuntu' ]; then
+    sudo apt-get install elpa-elpy
+fi
 
 # install 3rdparty packages
 source ./package_install_compile.sh
