@@ -17,7 +17,11 @@ sudo apt-get install silversearcher-ag
 sudo apt-get install netcat-openbsd smartmontools
 sudo apt-get install emacs-goodies-el curl git okular needrestart
 
-sudo apt-get install terminator pv meld
+sudo apt-get install terminator pv meld autoconf
+
+# pyenv recommanded
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
 
 # install gnutls for emacs
 sudo apt-get install libgnutls28-dev
