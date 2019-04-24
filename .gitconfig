@@ -1,9 +1,14 @@
 [user]
-	name = bucketzxm
-	email = bucketzxm@gmail.com
+	name = simon.zheng
+	email = simon.zheng@mujin.co.jp
+	signingkey = 3D61355A2D1CC24DE1A0BBFF526D4D41D19B5FD2
 	
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[commit]
+	gpgsign = true
+[log]
+	showSignature = true
