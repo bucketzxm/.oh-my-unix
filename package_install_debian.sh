@@ -18,6 +18,8 @@ sudo apt-get install emacs-goodies-el curl git okular needrestart
 
 sudo apt-get install terminator pv meld autoconf
 
+sudo apt-get install xclip
+
 # install font for emacs
 sudo apt install fonts-firacode
 
