@@ -16,7 +16,7 @@ sudo apt-get install silversearcher-ag
 sudo apt-get install netcat-openbsd smartmontools
 sudo apt-get install emacs-goodies-el curl git okular needrestart
 
-sudo apt-get install terminator pv meld autoconf
+sudo apt-get install terminator pv meld autoconf texinfo libgtk-3-dev
 
 sudo apt-get install xclip
 
