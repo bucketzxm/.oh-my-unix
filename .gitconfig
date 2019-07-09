@@ -12,3 +12,6 @@
 	gpgsign = true
 [log]
 	showSignature = true
+[rerere]
+	enable = 1
+	enabled = 1
